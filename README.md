@@ -1,3 +1,37 @@
+## Engineering focus
+
+Placement Intelligence is designed as a **research and verification workflow**, not a generic job-search scraper.
+
+### Workflow
+
+```text
+Fresh sources
+    ↓
+Candidate hiring signals
+    ↓
+Source verification
+    ↓
+Role / eligibility / deadline checks
+    ↓
+Deduplication
+    ↓
+Action-oriented briefing
+```
+
+### What it demonstrates
+
+- Retrieval of recent hiring information
+- Preference for official company/application sources
+- Verification of role and application details
+- Deduplication of reposted opportunities
+- Structured summaries designed around the next action
+
+### Design principle
+
+The system separates **finding information** from **verifying information**. A hiring signal is treated as useful only after relevant details such as role, eligibility, location, deadline, or application status have been checked where possible.
+
+---
+
 # Placement Intelligence
 
 A personal placement-intelligence plugin for fresh, verified, actionable India software and technology hiring information.
