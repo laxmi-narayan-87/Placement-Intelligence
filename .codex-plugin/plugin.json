@@ -1,0 +1,21 @@
+{
+  "interface": {
+    "displayName": "Placement Intelligence",
+    "shortDescription": "Fresh placement intelligence",
+    "longDescription": "Research and summarize fresh India software and technology placement updates for a 2027 B.Tech CSE/AI-ML fresher. Verify sources, deduplicate opportunities, track deadlines and assessments, compare changes, and surface only high-signal actionable information.",
+    "developerName": "Private plugin",
+    "category": "Education",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": "Give me today's placement updates using Placement Intelligence: prioritize fresh, verified, actionable India software/technology hiring information for my configured profile."
+  },
+  "name": "placement-intelligence",
+  "version": "0.1.0",
+  "description": "Fresh, verified India software hiring intelligence for a 2027 CSE/AI-ML fresher.",
+  "author": {
+    "name": "Private plugin"
+  },
+  "keywords": [],
+  "skills": "./skills"
+}
