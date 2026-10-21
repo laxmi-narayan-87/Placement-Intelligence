@@ -67,3 +67,6 @@ A curated credential database is available for job-description relevance matchin
 - \`docs/CERTIFICATIONS.md\` — schema and usage examples.
 
 Run \`python scripts/match_certifications.py --jd-file /path/to/job-description.txt\` to retrieve relevant records. The matcher reports tag overlap only; it does not rank credential quality, assert eligibility, or prove a skill. Missing credential URLs are stored as \`null\` and are never fabricated. See the documentation before using the output in a resume.
+
+
+Credential records distinguish learner-specific verification URLs (`link`) from public course catalog pages (`course_url`). Public course pages do not prove course completion; inspect the matching tags and credential details before using a record on a resume.
