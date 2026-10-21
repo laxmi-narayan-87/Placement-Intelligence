@@ -62,8 +62,8 @@
   date: 2025-12
   tags: [python, pandas, numpy, data-analysis, data-science, analytics, automation]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.coursera.org/projects/python-for-data-analysis-numpy"
+  course_url_checked: "2026-10-22"
 
 - id: coursera-genai
   title: "GenAI for Everyone"
@@ -72,8 +72,8 @@
   date: 2025-12
   tags: [generative-ai, llm, ai, prompt-engineering]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.coursera.org/learn/genai-for-everyone"
+  course_url_checked: "2026-10-22"
 
 - id: ust-python
   title: "Create Your First Python Program From UST"
@@ -274,8 +274,8 @@
   date: 2025-10
   tags: [artificial-intelligence, ai, leadership, strategy]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/paths/ai-for-organizational-leaders-by-microsoft-and-linkedin"
+  course_url_checked: "2026-10-22"
 
 - id: li-genai-learning-dev
   title: "Generative AI for Learning and Development Professional Certificate"
@@ -384,8 +384,8 @@
   date: 2024-12
   tags: [artificial-intelligence, ai, innovation, leadership]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/how-to-keep-your-team-on-the-bleeding-edge-of-ai-innovation"
+  course_url_checked: "2026-10-22"
 
 - id: li-integrating-genai-business
   title: "Integrating Generative AI into Business Strategy"
@@ -404,8 +404,8 @@
   date: 2024-07
   tags: [artificial-intelligence, ai, machine-learning, introduction]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/introduction-to-artificial-intelligence-24947908"
+  course_url_checked: "2026-10-22"
 
 - id: li-intro-prompt-engineering
   title: "Introduction to Prompt Engineering for Generative AI"
@@ -424,8 +424,8 @@
   date: 2024-12
   tags: [artificial-intelligence, ai, responsible-ai, ethics, leadership]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/leading-responsible-ai-in-organizations"
+  course_url_checked: "2026-10-22"
 
 - id: li-m365-copilot-dec2023
   title: "Learning Microsoft 365 Copilot"
@@ -444,8 +444,8 @@
   date: 2025-01
   tags: [microsoft-365, copilot, ai, productivity]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/learning-microsoft-365-copilot-for-work-2024"
+  course_url_checked: "2026-10-22"
 
 - id: li-practical-guide-upskilling-ai
   title: "A Practical Guide to Upskilling Your Organization on AI"
@@ -464,8 +464,8 @@
   date: 2024-11
   tags: [artificial-intelligence, ai, responsible-ai, management]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/responsible-ai-for-managers"
+  course_url_checked: "2026-10-22"
 
 - id: li-streamlining-copilot
   title: "Streamlining Your Work with Microsoft Copilot"
@@ -474,8 +474,8 @@
   date: 2024-06
   tags: [microsoft-365, copilot, ai, productivity]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/streamlining-your-work-with-microsoft-copilot-25840178"
+  course_url_checked: "2026-10-22"
 
 - id: li-future-workforce-learning-ai
   title: "The Future of Workforce Learning: AI-Powered Personalization for Skill Development"
@@ -514,8 +514,8 @@
   date: 2024-11
   tags: [generative-ai, llm, ai, introduction]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/what-is-generative-ai"
+  course_url_checked: "2026-10-22"
 
 - id: li-nano-chatgpt-business
   title: "Nano Tips for Using ChatGPT for Business"
@@ -524,8 +524,8 @@
   date: 2024-07
   tags: [generative-ai, chatgpt, ai, business]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/nano-tips-for-using-chatgpt-for-business-with-rachel-woods"
+  course_url_checked: "2026-10-22"
 
 - id: li-nano-data-analysis-chatgpt
   title: "Nano Tips for Navigating Advanced Data Analysis in ChatGPT"
@@ -544,8 +544,8 @@
   date: 2024-10
   tags: [artificial-intelligence, ai, management]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.linkedin.com/learning/nano-tips-to-use-ai-to-be-a-more-effective-manager-with-ashley-herd"
+  course_url_checked: "2026-10-22"
 
 - id: stanford-ml-specialization
   title: "Machine Learning Specialization"
@@ -554,8 +554,8 @@
   date: 2026-06
   tags: [machine-learning, supervised-learning, unsupervised-learning, neural-networks, deep-learning, tensorflow, python, scikit-learn, recommender-systems, reinforcement-learning, clustering]
   link: null
-  course_url: null
-  course_url_checked: null
+  course_url: "https://www.coursera.org/specializations/machine-learning-introduction"
+  course_url_checked: "2026-10-22"
 
 - id: oracle-oci-ai-foundations-2025
   title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate"
