@@ -13,6 +13,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 DATABASE_PATH = ROOT / "data" / "certifications.yml"
 REQUIRED_FIELDS = {"id", "title", "issuer", "platform", "date", "tags", "link"}
+OPTIONAL_FIELDS = {"course_url", "course_url_checked"}
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 TAG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 DATE_RE = re.compile(r"^(\d{4})-(\d{2})$")
@@ -49,7 +50,7 @@ def validate_records(records: list[dict]) -> tuple[list[str], list[str]]:
 
         keys = set(record)
         missing = REQUIRED_FIELDS - keys
-        extra = keys - REQUIRED_FIELDS
+        extra = keys - REQUIRED_FIELDS - OPTIONAL_FIELDS
         if missing:
             errors.append(f"{prefix} ({record.get('id', 'no id')}): missing fields: {', '.join(sorted(missing))}.")
         if extra:
@@ -96,14 +97,31 @@ def validate_records(records: list[dict]) -> tuple[list[str], list[str]]:
                 else:
                     local_tags.add(tag)
 
-        link = record.get("link")
-        if link is not None:
-            if not isinstance(link, str) or not link.strip():
-                errors.append(f"{prefix} ({record_id or 'no id'}): link must be null or a non-empty URL.")
-            else:
-                parsed = urlsplit(link)
-                if parsed.scheme != "https" or not parsed.netloc or parsed.username or parsed.password:
-                    errors.append(f"{prefix} ({record_id or 'no id'}): link must be an absolute HTTPS URL without embedded credentials.")
+        for field in ("link", "course_url"):
+            value = record.get(field)
+            if value is not None:
+                if not isinstance(value, str) or not value.strip():
+                    errors.append(f"{prefix} ({record_id or 'no id'}): {field} must be null or a non-empty URL.")
+                else:
+                    parsed = urlsplit(value)
+                    if parsed.scheme != "https" or not parsed.netloc or parsed.username or parsed.password:
+                        errors.append(f"{prefix} ({record_id or 'no id'}): {field} must be an absolute HTTPS URL without embedded credentials.")
+
+        if "course_url" in record or "course_url_checked" in record:
+            course_url = record.get("course_url")
+            checked = record.get("course_url_checked")
+            if course_url is None and checked is not None:
+                errors.append(f"{prefix} ({record_id or 'no id'}): course_url_checked must be null when course_url is null.")
+            elif course_url is not None:
+                if not isinstance(checked, str) or not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", checked):
+                    errors.append(f"{prefix} ({record_id or 'no id'}): course_url_checked must use YYYY-MM-DD when course_url is provided.")
+                else:
+                    try:
+                        date.fromisoformat(checked)
+                    except ValueError:
+                        errors.append(f"{prefix} ({record_id or 'no id'}): course_url_checked is not a valid calendar date.")
+                    if checked[:7] > current_month:
+                        warnings.append(f"{record_id}: course URL check date {checked} is in the future.")
 
     for title, ids in titles.items():
         if len(ids) > 1:
@@ -120,6 +138,17 @@ def validate_records(records: list[dict]) -> tuple[list[str], list[str]]:
         warnings.append(
             f"{len(missing_links)} of {len(records)} records have no credential URL. Add only direct, verified links; none were fabricated."
         )
+
+    if any(isinstance(r, dict) and "course_url" in r for r in records):
+        missing_course_pages = [
+            r.get("id", f"entry-{i}") for i, r in enumerate(records, start=1)
+            if isinstance(r, dict) and r.get("course_url") is None
+        ]
+        if missing_course_pages:
+            warnings.append(
+                f"{len(missing_course_pages)} of {len(records)} records have no confidently matched public course page. "
+                "Review titles/provider details before adding one."
+            )
 
     return errors, warnings
 
@@ -141,6 +170,9 @@ def main() -> int:
         return 1
     unique_tags = {tag for record in records for tag in record["tags"]}
     print(f"PASS: {len(records)} records; {len(unique_tags)} distinct tags; required fields and formats validated.")
+    if any("course_url" in record for record in records):
+        linked_courses = sum(record.get("course_url") is not None for record in records)
+        print(f"Public course pages mapped: {linked_courses}/{len(records)}.")
     print(f"Warnings: {len(warnings)} (missing links and repeated titles require human review, not automatic correction).")
     return 0
 
