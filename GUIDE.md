@@ -189,3 +189,6 @@ The repository includes a curated credential inventory for relevance matching.
 4. Treat \`Not provided in database\` as a missing link, not as evidence that the credential is invalid. Only add verified credential URLs.
 
 To validate updates, run \`python -m pip install PyYAML==6.0.3\`, \`python scripts/validate_certifications.py\`, and \`python -m unittest discover -s tests -v\`. See [Certification database docs](docs/CERTIFICATIONS.md).
+
+
+**Credential URLs vs. course pages:** a record's `link` is learner-specific evidence when supplied; `course_url` is a public course description. Never treat the latter as proof of completion.
