@@ -37,4 +37,7 @@ The matcher is deterministic keyword/tag overlap. It shows which tags matched ea
 
 ## Link-verification work still to do
 
-The inventory includes three non-empty credential URLs and 53 missing links. The validator checks URL syntax, not whether an issuer currently serves or authenticates the page. Link reachability and award details have not been confirmed by this script. Add direct credential pages as they become available.
+The inventory keeps the three personal credential URLs supplied in the source file and does not infer personal credential links from public pages. Public course/catalog pages are mapped only for records with a confidently matched official provider page. The validator checks URL syntax and date fields, not live HTTP reachability or whether a specific learner earned a credential. Add a personal credential URL from the learner’s certificate/share page after confirming it.
+
+
+The matcher returns matched tags, personal credential URL status, and the mapped public course page when available. `--require-link` filters for records with a supplied personal credential URL; a course page alone does not verify completion.
