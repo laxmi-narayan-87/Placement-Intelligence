@@ -2,6 +2,8 @@
 
 Reviewed: 2026-10-22
 
+Mapped 37 public course/catalog pages from the 56-record inventory; 19 records remain without a confidently matched public course page. Personal credential verification URLs are a separate field and are still missing for 53 records.
+
 This log records public provider/catalog pages mapped to the certification database after searching for the supplied course title. These are **course descriptions or learning paths**, not learner-specific certificate verification pages. A page existing does not confirm that Laxmi completed or earned the credential. Personal verification belongs in the `link` field only when the learner's actual credential URL is available.
 
 The `course_url_checked` metadata records when the title/page mapping was reviewed; the automated validator checks syntax and date consistency, not live HTTP reachability.
@@ -32,6 +34,19 @@ The `course_url_checked` metadata records when the title/page mapping was review
 | `li-managers-guide-career-ai` | https://www.linkedin.com/learning/the-manager-s-guide-to-career-conversations-in-the-age-of-ai |
 | `li-using-genai-personalized-learning` | https://www.linkedin.com/learning/using-gen-ai-to-develop-personalized-learning-plans |
 | `li-future-workforce-learning-ai` | https://www.linkedin.com/learning/the-future-of-workforce-learning-ai-powered-personalization-for-skill-development |
+| `coursera-pandas-numpy` | https://www.coursera.org/projects/python-for-data-analysis-numpy |
+| `coursera-genai` | https://www.coursera.org/learn/genai-for-everyone |
+| `li-ai-org-leaders` | https://www.linkedin.com/learning/paths/ai-for-organizational-leaders-by-microsoft-and-linkedin |
+| `li-keep-team-bleeding-edge-ai` | https://www.linkedin.com/learning/how-to-keep-your-team-on-the-bleeding-edge-of-ai-innovation |
+| `li-intro-ai-2023` | https://www.linkedin.com/learning/introduction-to-artificial-intelligence-24947908 |
+| `li-leading-responsible-ai` | https://www.linkedin.com/learning/leading-responsible-ai-in-organizations |
+| `li-m365-copilot-work-2024` | https://www.linkedin.com/learning/learning-microsoft-365-copilot-for-work-2024 |
+| `li-responsible-ai-managers` | https://www.linkedin.com/learning/responsible-ai-for-managers |
+| `li-streamlining-copilot` | https://www.linkedin.com/learning/streamlining-your-work-with-microsoft-copilot-25840178 |
+| `li-what-is-genai` | https://www.linkedin.com/learning/what-is-generative-ai |
+| `li-nano-chatgpt-business` | https://www.linkedin.com/learning/nano-tips-for-using-chatgpt-for-business-with-rachel-woods |
+| `li-nano-ai-effective-manager` | https://www.linkedin.com/learning/nano-tips-to-use-ai-to-be-a-more-effective-manager-with-ashley-herd |
+| `stanford-ml-specialization` | https://www.coursera.org/specializations/machine-learning-introduction |
 
 ## Remaining verification work
 
