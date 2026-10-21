@@ -29,6 +29,14 @@ class CertificationDatabaseTests(unittest.TestCase):
         self.assertTrue(all(record["link"] is None or record["link"].startswith("https://") for record in self.records))
         self.assertEqual(sum(record["link"] is None for record in self.records), 53)
 
+    def test_course_page_urls_are_explicit_and_dated(self):
+        linked = [record for record in self.records if record.get("course_url")]
+        self.assertEqual(len(linked), 24)
+        self.assertTrue(all(record["course_url"].startswith("https://") for record in linked))
+        self.assertTrue(all(record["course_url_checked"] == "2026-10-22" for record in linked))
+        self.assertTrue(all(record.get("course_url_checked") is None for record in self.records
+                            if not record.get("course_url")))
+
     def test_job_description_tag_extraction(self):
         tags = extract_tags("We need Python, SQL and machine learning experience with neural networks.", self.records)
         self.assertIn("python", tags)
@@ -42,6 +50,8 @@ class CertificationDatabaseTests(unittest.TestCase):
         self.assertGreaterEqual(result[0]["matched_tag_count"], 1)
         self.assertIn("matched_tags", result[0])
         self.assertIn(result[0]["link_status"], {"provided", "missing"})
+        self.assertIn(result[0]["course_page_status"], {"mapped", "not-mapped"})
+        self.assertIn("course_url", result[0])
 
     def test_require_link_filters_missing_credential_urls(self):
         result = match_records(self.records, {"python"}, limit=50, require_link=True)
