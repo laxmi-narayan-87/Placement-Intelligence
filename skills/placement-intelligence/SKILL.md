@@ -104,6 +104,18 @@ Do not use subjective “best company” rankings, scores, tiers, or winners. Or
 
 Use concrete dates rather than vague phrases such as “soon” whenever available.
 
+## Certification-aware job-description matching
+
+When the user asks which credentials to include for a role, to tailor a resume to a job description, or to assess the relevance of their training:
+
+1. Use \`data/certifications.yml\` as the source of truth for the supplied inventory. Preserve each title, issuer, platform, date precision, and record ID.
+2. Run \`python scripts/validate_certifications.py\` after changes to the inventory, then use \`python scripts/match_certifications.py --jd-file <path-to-JD.txt>\` to identify tag overlaps. If a file is not available to the running environment, request or use the supplied JD text instead of claiming that the script ran.
+3. Give the user a small, role-relevant subset and show the exact matching tags. Do not recommend all entries by default and do not treat tag overlap as a credential-quality score, proof of practical skill, or a hiring-eligibility decision.
+4. Do not promote a course completion entry to a formal vendor certification unless the source title/record explicitly supports that terminology. Preserve the credential's recorded title.
+5. Treat \`link: null\` as “no credential URL supplied in the database”. Never invent certificate links, issue dates, provider details, grades, or credential IDs. Distinguish link syntax checks from live/issuer verification.
+6. The inventory currently warns about missing credential links and one repeated title across different providers. Do not silently drop repeated-title records; use issuer/platform to distinguish them.
+7. Before adding a credential to a tailored resume, keep the wording faithful to the record and ask the user to confirm any uncertain completion details.
+
 ## Output formats
 
 ### “Today's placement updates”
