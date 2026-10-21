@@ -113,7 +113,7 @@ def validate_records(records: list[dict]) -> tuple[list[str], list[str]]:
             if course_url is None and checked is not None:
                 errors.append(f"{prefix} ({record_id or 'no id'}): course_url_checked must be null when course_url is null.")
             elif course_url is not None:
-                if not isinstance(checked, str) or not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", checked):
+                if not isinstance(checked, str) or len(checked) != 10 or checked[4:5] != "-" or checked[7:8] != "-":
                     errors.append(f"{prefix} ({record_id or 'no id'}): course_url_checked must use YYYY-MM-DD when course_url is provided.")
                 else:
                     try:
