@@ -178,3 +178,14 @@ For recurring daily delivery or conditional alerts, use ChatGPT automation separ
 ## Recommended first message
 
 > Give me today's placement updates using Placement Intelligence. Prioritize fresh, verified, actionable India software/technology hiring information for a 2027 B.Tech CSE/AI-ML fresher. Check whether each important application is actually live, prioritize official sources, include deadlines and upcoming assessments, and avoid duplicate or stale posts.
+
+## Match certifications to a job description
+
+The repository includes a curated credential inventory for relevance matching.
+
+1. Save the job description as UTF-8 text.
+2. Run \`python scripts/match_certifications.py --jd-file /path/to/job-description.txt\`.
+3. Review the matching tags and each credential's source wording before deciding what to include in a resume.
+4. Treat \`Not provided in database\` as a missing link, not as evidence that the credential is invalid. Only add verified credential URLs.
+
+To validate updates, run \`python -m pip install PyYAML==6.0.3\`, \`python scripts/validate_certifications.py\`, and \`python -m unittest discover -s tests -v\`. See [Certification database docs](docs/CERTIFICATIONS.md).
