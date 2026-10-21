@@ -41,3 +41,8 @@ The inventory keeps the three personal credential URLs supplied in the source fi
 
 
 The matcher returns matched tags, personal credential URL status, and the mapped public course page when available. `--require-link` filters for records with a supplied personal credential URL; a course page alone does not verify completion.
+
+
+## Public course URL review log
+
+See [COURSE_URL_REVIEW.md](COURSE_URL_REVIEW.md) for the 24 public course/catalog pages mapped on 2026-10-22 and the remaining verification work.
