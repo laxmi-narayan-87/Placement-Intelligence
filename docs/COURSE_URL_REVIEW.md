@@ -2,7 +2,7 @@
 
 Reviewed: 2026-10-22
 
-Mapped 37 public course/catalog pages from the 56-record inventory; 19 records remain without a confidently matched public course page. Personal credential verification URLs are a separate field and are still missing for 53 records.
+Mapped 38 public course/catalog pages from the 56-record inventory; 19 records remain without a confidently matched public course page. Personal credential verification URLs are a separate field and are still missing for 53 records.
 
 This log records public provider/catalog pages mapped to the certification database after searching for the supplied course title. These are **course descriptions or learning paths**, not learner-specific certificate verification pages. A page existing does not confirm that Laxmi completed or earned the credential. Personal verification belongs in the `link` field only when the learner's actual credential URL is available.
 
@@ -47,6 +47,8 @@ The `course_url_checked` metadata records when the title/page mapping was review
 | `li-nano-chatgpt-business` | https://www.linkedin.com/learning/nano-tips-for-using-chatgpt-for-business-with-rachel-woods |
 | `li-nano-ai-effective-manager` | https://www.linkedin.com/learning/nano-tips-to-use-ai-to-be-a-more-effective-manager-with-ashley-herd |
 | `stanford-ml-specialization` | https://www.coursera.org/specializations/machine-learning-introduction |
+
+| `anthropic-claude-101` | https://anthropic.skilljar.com/claude-101 |
 
 ## Remaining verification work
 
