@@ -65,6 +65,9 @@ def match_records(records: list[dict], requested_tags: set[str], limit: int = 10
             "matched_tag_count": len(common),
             "link": record.get("link"),
             "link_status": "provided" if record.get("link") else "missing",
+            "course_url": record.get("course_url"),
+            "course_url_checked": record.get("course_url_checked"),
+            "course_page_status": "mapped" if record.get("course_url") else "not-mapped",
         })
     matched.sort(key=lambda item: (-item["matched_tag_count"], item["title"].casefold(), item["date"]))
     return matched[:limit]
@@ -114,7 +117,11 @@ def main() -> int:
         print(f"\n{number}. {item['title']} — {item['issuer']}")
         print(f"   Platform/date: {item['platform']} · {item['date']}")
         print(f"   Matching tags ({item['matched_tag_count']}): {', '.join(item['matched_tags'])}")
-        print(f"   Credential link: {item['link'] or 'Not provided in database'}")
+        print(f"   Personal credential URL: {item['link'] or 'Not provided in database'}")
+        course_page = item.get("course_url") or "No confidently matched public course page"
+        if item.get("course_url"):
+            course_page += f" (title match reviewed {item.get('course_url_checked')})"
+        print(f"   Public course page: {course_page}")
     print("\nNote: relevance is deterministic tag overlap, not a credential-quality score. Missing URLs are not inferred.")
     return 0
 
