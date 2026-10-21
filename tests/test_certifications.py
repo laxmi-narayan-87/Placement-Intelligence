@@ -31,7 +31,7 @@ class CertificationDatabaseTests(unittest.TestCase):
 
     def test_course_page_urls_are_explicit_and_dated(self):
         linked = [record for record in self.records if record.get("course_url")]
-        self.assertEqual(len(linked), 24)
+        self.assertEqual(len(linked), 37)
         self.assertTrue(all(record["course_url"].startswith("https://") for record in linked))
         self.assertTrue(all(record["course_url_checked"] == "2026-10-22" for record in linked))
         self.assertTrue(all(record.get("course_url_checked") is None for record in self.records
