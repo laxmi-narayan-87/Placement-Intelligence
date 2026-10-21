@@ -54,3 +54,16 @@ A personal placement-intelligence plugin for fresh, verified, actionable India s
 This repository mirrors the private Placement Intelligence plugin configuration.
 
 > Never commit API keys, OAuth tokens, passwords, or other secrets.
+
+
+## Certification-aware role matching
+
+A curated credential database is available for job-description relevance matching:
+
+- \`data/certifications.yml\` — 56 records from the supplied inventory, with normalized tags.
+- \`scripts/validate_certifications.py\` — validates required fields, IDs, dates, tags, URL syntax and missing data.
+- \`scripts/match_certifications.py\` — matches JD wording to known tags and explains which tags matched each record.
+- \`tests/test_certifications.py\` and \`.github/workflows/validate-certifications.yml\` — regression tests and CI validation.
+- \`docs/CERTIFICATIONS.md\` — schema and usage examples.
+
+Run \`python scripts/match_certifications.py --jd-file /path/to/job-description.txt\` to retrieve relevant records. The matcher reports tag overlap only; it does not rank credential quality, assert eligibility, or prove a skill. Missing credential URLs are stored as \`null\` and are never fabricated. See the documentation before using the output in a resume.
