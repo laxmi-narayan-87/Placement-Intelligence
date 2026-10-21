@@ -1,0 +1,40 @@
+name: Validate certification database
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/certifications.yml"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/validate-certifications.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/certifications.yml"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/validate-certifications.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.6.0
+        with:
+          python-version: "3.12"
+      - name: Install YAML parser
+        run: python -m pip install --disable-pip-version-check PyYAML==6.0.3
+      - name: Validate database
+        run: python scripts/validate_certifications.py
+      - name: Test JD relevance matching
+        run: python -m unittest discover -s tests -v
