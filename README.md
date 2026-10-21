@@ -69,4 +69,4 @@ A curated credential database is available for job-description relevance matchin
 Run \`python scripts/match_certifications.py --jd-file /path/to/job-description.txt\` to retrieve relevant records. The matcher reports tag overlap only; it does not rank credential quality, assert eligibility, or prove a skill. Missing credential URLs are stored as \`null\` and are never fabricated. See the documentation before using the output in a resume.
 
 
-The current inventory has 56 records, 24 matched public course/catalog pages, and 3 learner-specific credential URLs from the supplied source. The missing personal URLs must be copied from the learner’s actual credential pages; catalog pages are not completion proof. See [the public course URL review log](docs/COURSE_URL_REVIEW.md).
+The current inventory has 56 records, 37 matched public course/catalog pages, and 3 learner-specific credential URLs from the supplied source. The missing personal URLs must be copied from the learner’s actual credential pages; catalog pages are not completion proof. See [the public course URL review log](docs/COURSE_URL_REVIEW.md).
