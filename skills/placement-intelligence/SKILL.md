@@ -209,3 +209,8 @@ If the user provides an explicit date range, honor it.
 The plugin is a research-and-intelligence workflow, not an autonomous background crawler. It fetches fresh information when invoked. If the user wants a recurring daily briefing or conditional alert, the assistant can set up a ChatGPT automation using the same placement-intelligence prompt; do not claim that the plugin itself is continuously running when it is not.
 
 When no reliable fresh opportunities are found, say that clearly rather than padding the report with stale or weak sources.
+
+
+## Course-page vs. credential-link distinction
+
+The certification inventory separates `link` (learner-specific credential/verification URL) from `course_url` (public catalog/course page) and `course_url_checked` (date the public course title/page match was reviewed). A catalog page is not evidence that the candidate completed the course. Never invent learner-specific links, award dates, certificate IDs, or status. Only claim that a credential was completed if the supplied profile or a verified credential page supports that claim.
