@@ -232,8 +232,8 @@
   date: 2026-03
   tags: [generative-ai, llm, claude, anthropic, ai, prompt-engineering]
   link: "https://verify.skilljar.com/c/7q4tkfc2sqrg"
-  course_url: null
-  course_url_checked: null
+  course_url: "https://anthropic.skilljar.com/claude-101"
+  course_url_checked: "2026-10-22"
 
 - id: devtown-cert
   title: "DevTown Certification"
